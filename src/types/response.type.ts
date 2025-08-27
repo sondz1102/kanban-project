@@ -1,20 +1,12 @@
+import type { User } from "./user.type";
+
 export interface APIResponse<T> {
   success: string;
   message: string;
   data: T;
 }
 
-export interface AuthResponse {
-  id: number;
-  name: string;
-  emai: string;
-  phone: string;
-  role: string;
-  status: number;
-  avatar: string | null;
-  createdAt: string;
-  updatedAt: string;
-
+export interface AuthResponse extends User {
   accessToken: string;
   refreshToken: string;
 }
